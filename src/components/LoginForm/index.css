@@ -1,1 +1,94 @@
-/* Write your CSS code here */
+.login-route-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .login-route-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.login-web-logo-small {
+  width: 138px;
+}
+@media (min-width: 768px) {
+  .login-web-logo-small {
+    display: none;
+  }
+}
+
+.login-image {
+  width: 290px;
+}
+@media (min-width: 768px) {
+  .login-image {
+    width: 45%;
+    /* margin-right: 33px; */
+  }
+}
+
+.login-form-card {
+  border: none;
+  border-radius: 11px;
+  box-shadow: 0 4px 16px 0 #64748b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+
+  padding: 21px 13px;
+}
+
+.login-web-logo-large {
+  display: none;
+  width: 138px;
+}
+@media (min-width: 768px) {
+  .login-web-logo-large {
+    display: block;
+    align-self: center;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 24px 13px;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 5px;
+}
+
+.input {
+  border: solid 2px #e2e8f0;
+  border-radius: 4px;
+  background-color: #e2e8f0;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 11px 9px;
+  margin-bottom: 11px;
+  height: 32px;
+  outline: none;
+  cursor: pointer;
+}
+.login-button {
+  background-color: #0b69ff;
+  color: #ffffff;
+  border: solid 2px #0967d2;
+  border-radius: 5px;
+  margin-top: 9px;
+  padding: 9px 11px;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}

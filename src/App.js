@@ -1,6 +1,6 @@
 import './App.css'
-import Home from './components/Home'
+import LoginForm from './components/LoginForm'
 
-const App = () => <Home />
+const App = () => <LoginForm />
 
 export default App
