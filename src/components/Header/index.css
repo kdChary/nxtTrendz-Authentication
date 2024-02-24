@@ -27,7 +27,7 @@
 
 .small-devices-nav-footer {
   list-style-type: none;
-  padding: 7px 21px;
+  padding: 11px 13px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -39,7 +39,7 @@
   text-decoration: none;
 }
 .nav-logo {
-  width: 27px;
+  width: 21px;
   cursor: pointer;
 }
 @media (min-width: 768px) {
