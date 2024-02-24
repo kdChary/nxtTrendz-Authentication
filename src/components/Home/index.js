@@ -11,13 +11,16 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="home-container-small-devices">
-        <h1 className="home-title">Clothes That Get You Noticed</h1>
-        <img src={homeImageUrl} alt={imageAlt} className="home-image" />
-        <p className="home-description">{homeDescription}</p>
-        <button type="button" className="home-button">
-          Shop Now
-        </button>
+      <div className="home-container">
+        <div className="home-container-small-devices">
+          <h1 className="home-title">Clothes That Get You Noticed</h1>
+          <img src={homeImageUrl} alt={imageAlt} className="home-image" />
+          <p className="home-description">{homeDescription}</p>
+          <button type="button" className="home-button">
+            Shop Now
+          </button>
+        </div>
+        <img src={homeImageUrl} alt={imageAlt} className="home-image-large" />
       </div>
     </>
   )
