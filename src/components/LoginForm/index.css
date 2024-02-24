@@ -92,3 +92,9 @@
   outline: none;
   cursor: pointer;
 }
+
+.warning-msg {
+  font-size: 9px;
+  font-weight: 500;
+  color: #ff0b37;
+}
