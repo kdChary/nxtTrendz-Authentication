@@ -3,7 +3,12 @@ import {Component} from 'react'
 import './index.css'
 
 class LoginForm extends Component {
-  state = {username: '', password: '', wrongUser: false}
+  state = {username: '', password: '', wrongUser: false, errorMsg: ''}
+
+  submitSuccess = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
 
   onChangeUserName = event => {
     this.setState({username: event.target.value})
@@ -11,6 +16,25 @@ class LoginForm extends Component {
 
   onChangePassword = event => {
     this.setState({password: event.target.value})
+  }
+
+  loginRequested = async event => {
+    event.preventDefault()
+    const {username, password} = this.state
+    const userDetails = {username, password}
+    const url = 'https://apis.ccbp.in/login'
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(userDetails),
+    }
+
+    const response = await fetch(url, options)
+    const data = await response.json()
+    if (response.ok === true) {
+      this.submitSuccess()
+    } else {
+      this.setState({wrongUser: true, errorMsg: data.error_msg})
+    }
   }
 
   renderUserName = () => (
@@ -44,15 +68,15 @@ class LoginForm extends Component {
   )
 
   renderLoginForm = () => {
-    const {wrongUser} = this.state
+    const {wrongUser, errorMsg} = this.state
     return (
-      <form name="login" onSubmit="loginRequested" className="login-form">
+      <form name="login" onSubmit={this.loginRequested} className="login-form">
         {this.renderUserName()}
         {this.renderPassword()}
         <button type="submit" className="login-button">
           Login
         </button>
-        {wrongUser && <p className="warning-msg">*Username is not found</p>}
+        {wrongUser && <p className="warning-msg">{`*${errorMsg}`}</p>}
       </form>
     )
   }
